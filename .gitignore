@@ -33,3 +33,9 @@ bower.json
 
 # Ignore pow environment settings
 .powenv
+
+# config setting
+/lib/tasks/user.rake
+/config/database.yml
+/config/settings.yml
+/public/uploads/*
