@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    Alohaha (0.0.1)
     actionmailer (4.2.1)
       actionpack (= 4.2.1)
       actionview (= 4.2.1)
@@ -277,6 +278,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  Alohaha
   awesome_print
   byebug
   cancancan (~> 1.10)
