@@ -1,0 +1,25 @@
+%h1 Home#index
+
+- @flight_arrivals.each do |flight|
+  %p= flight.terminal
+  %p= flight.kind
+  %p= flight.code
+  %p= flight.code_zh
+  %p= flight.flight
+  %p= flight.gate
+  %p= flight.datetime
+  %p= flight.expected_datetime
+  %p= flight.destination
+  %p= flight.flight_status
+
+- @flight_departure.each do |flight|
+  %p= flight.terminal
+  %p= flight.kind
+  %p= flight.code
+  %p= flight.code_zh
+  %p= flight.flight
+  %p= flight.gate
+  %p= flight.datetime
+  %p= flight.expected_datetime
+  %p= flight.destination
+  %p= flight.flight_status
