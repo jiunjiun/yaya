@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require 'Alohaha/flight_helper'
+require 'alohaha/flight_helper'
 class FlightInfo
   #  save yesterday flight info
   def self.save_yesterday_info
