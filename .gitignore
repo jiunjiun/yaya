@@ -35,7 +35,9 @@ bower.json
 .powenv
 
 # config setting
-/lib/tasks/user.rake
 /config/database.yml
 /config/settings.yml
+/config/deploy.rb
+/config/puma.rb
+/lib/tasks/user.rake
 /public/uploads/*
