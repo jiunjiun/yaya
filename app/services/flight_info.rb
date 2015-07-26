@@ -22,4 +22,12 @@ class FlightInfo
   def self.flights
     Alohaha.new.by_datetime.filter_kind
   end
+
+  def self.today
+    Alohaha.new.today.filter_kind
+  end
+
+  def self.tomorrow
+    Alohaha.new.tomorrow.filter_kind
+  end
 end

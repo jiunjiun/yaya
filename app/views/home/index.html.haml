@@ -1,25 +1,48 @@
-%h1 Home#index
+.row#home
+  .col.s12
+    %ul.tabs
+      %li.tab.col.s6
+        %a.active{:href => "#arrivals"}= t('arrivals')
+      %li.tab.col.s6
+        %a{:href => "#departure"}= t('departure')
+  #arrivals.col.s12
+    %table.striped
+      %thead
+        %tr
+          %th{"data-field" => "terminal"}= t('helpers.terminal')
+          %th{"data-field" => "datetime"}= t('helpers.datetime')
+          %th{"data-field" => "flight_code"}= t('helpers.flight_code')
+          %th{"data-field" => "baggage_carousel"}= t('helpers.baggage_carousel')
+          %th{"data-field" => "destination"}= t('helpers.destination')
+          %th{"data-field" => "status"}= t('helpers.status')
+      %tbody
+        - @flight_arrivals.each do |flight|
+          %tr
+            %td= flight.terminal
+            %td= l flight.expected_datetime, format: :short
+            %td= flight_code(flight.code, flight.flight)
+            %td= flight.baggage_carousel
+            %td= flight.destination.zh
+            %td= flight.flight_status
 
-- @flight_arrivals.each do |flight|
-  %p= flight.terminal
-  %p= flight.kind
-  %p= flight.code
-  %p= flight.code_zh
-  %p= flight.flight
-  %p= flight.gate
-  %p= flight.datetime
-  %p= flight.expected_datetime
-  %p= flight.destination
-  %p= flight.flight_status
+  #departure.col.s12
+    %table.striped
+      %thead
+        %tr
+          %th{"data-field" => "terminal"}= t('helpers.terminal')
+          %th{"data-field" => "datetime"}= t('helpers.datetime')
+          %th{"data-field" => "flight_code"}= t('helpers.flight_code')
+          %th{"data-field" => "check_in_counter"}= t('helpers.check_in_counter')
+          %th{"data-field" => "destination"}= t('helpers.destination')
+          %th{"data-field" => "status"}= t('helpers.status')
+      %tbody
+        - @flight_departure.each do |flight|
+          %tr
+            %td= flight.terminal
+            %td= l flight.datetime, format: :short
+            %td= flight_code(flight.code, flight.flight)
+            %td= flight.check_in_counter
+            %td= flight.destination.zh
+            %td= flight.flight_status
 
-- @flight_departure.each do |flight|
-  %p= flight.terminal
-  %p= flight.kind
-  %p= flight.code
-  %p= flight.code_zh
-  %p= flight.flight
-  %p= flight.gate
-  %p= flight.datetime
-  %p= flight.expected_datetime
-  %p= flight.destination
-  %p= flight.flight_status
+

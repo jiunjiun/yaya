@@ -1,11 +1,11 @@
-%nav.light-blue.lighten-1{:role => "navigation"}
+%nav{:role => "navigation"}
   .nav-wrapper.container
-    %a#logo-container.brand-logo{:href => "#"} Logo
+    %a#logo-container.brand-logo{:href => "#"} Alohaha
     %ul.right.hide-on-med-and-down
       %li
-        %a{:href => "#"} Navbar Link
+        %a{:href => "#"}= t('search')
     %ul#nav-mobile.side-nav{:style => "left: -250px;"}
       %li
-        %a{:href => "#"} Navbar Link
+        %a{:href => "#"}= t('search')
     %a.button-collapse{"data-activates" => "nav-mobile", :href => "#"}
       %i.material-icons menu
