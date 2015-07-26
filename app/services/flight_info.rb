@@ -1,6 +1,8 @@
 #!/usr/bin/env ruby
 
+require 'Alohaha/flight_helper'
 class FlightInfo
+  #  save yesterday flight info
   def self.save_yesterday_info
     haha = Alohaha.new
     haha.flights.each do |flight|
@@ -15,5 +17,9 @@ class FlightInfo
         flight_info.save
       end
     end
+  end
+
+  def self.flights
+    Alohaha.new.by_datetime.filter_kind
   end
 end
