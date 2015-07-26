@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/jiunjiun/Alohaha.git
-  revision: 98c8a0472ac5838a34900b18da3a6d83a9a666c4
+  revision: 5e1957cc69b64a7a0f25128e1e5c542e906f06f4
   specs:
     Alohaha (0.0.4)
       iconv
@@ -64,11 +64,6 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    carrierwave (0.10.0)
-      activemodel (>= 3.2.0)
-      activesupport (>= 3.2.0)
-      json (>= 1.7)
-      mime-types (>= 1.16)
     childprocess (0.5.6)
       ffi (~> 1.0, >= 1.0.11)
     chronic (0.10.2)
@@ -158,6 +153,8 @@ GEM
     lumberjack (1.0.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    materialize-sass (0.97.0)
+      sass (~> 3.3)
     meta-tags (2.0.0)
       actionpack (>= 3.0.0)
     method_source (0.8.2)
@@ -167,7 +164,6 @@ GEM
       rake
     mina-puma (0.2.0)
       mina
-    mini_magick (4.2.7)
     mini_portile (0.6.2)
     minitest (5.7.0)
     multi_json (1.11.2)
@@ -175,6 +171,7 @@ GEM
     nenv (0.2.0)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
+    normalize-rails (3.0.3)
     notiffany (0.0.6)
       nenv (~> 0.1)
       shellany (~> 0.0)
@@ -306,7 +303,6 @@ DEPENDENCIES
   byebug
   cancancan (~> 1.10)
   capybara (~> 2.1.0)
-  carrierwave
   coffee-rails (~> 4.1.0)
   database_cleaner (~> 1.0.1)
   devise
@@ -323,11 +319,12 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   launchy (~> 2.3.0)
+  materialize-sass
   meta-tags
   mina
   mina-puma
-  mini_magick
   mysql2
+  normalize-rails
   pry
   pry-rails
   pry-remote

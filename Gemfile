@@ -99,12 +99,13 @@ gem 'cancancan', '~> 1.10'
 # gem 'compass-rails'
 # gem 'bootstrap-sass'
 gem 'haml'
-# gem 'normalize-rails'
+gem 'normalize-rails'
 gem "font-awesome-rails"
+gem 'materialize-sass'
 
 # Upload, zip image
-gem 'carrierwave'
-gem 'mini_magick'
+# gem 'carrierwave'
+# gem 'mini_magick'
 
 # config file
 gem 'settingslogic'
