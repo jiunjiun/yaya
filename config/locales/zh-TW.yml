@@ -1,0 +1,25 @@
+zh-TW:
+  title: 'Alohaha'
+
+  arrivals     : '入境航班'
+  departure    : '出境航班'
+
+  search       : '查詢'
+  statistics   : '統計'
+
+  helpers:
+    terminal:     '航廈'
+    datetime:     '時間'
+    flight_code:  '班機編號'
+    status:       '狀態'
+
+    departure:    '出發地'
+    destination:  '目的地'
+
+    baggage_carousel:  '行李轉盤'
+    check_in_counter:  '報到櫃檯'
+
+
+  time:
+    formats:
+      short: "%H:%M"
