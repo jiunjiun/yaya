@@ -1,0 +1,47 @@
+.row#home
+  .col.s12
+    %ul.tabs
+      %li.tab.col.s6
+        %a.active{:href => "#T1"}= t('T1')
+      %li.tab.col.s6
+        %a{:href => "#T2"}= t('T2')
+  #T1.col.s12
+    %table.striped
+      %thead
+        %tr
+          %th{"data-field" => "terminal"}= t('helpers.terminal')
+          %th{"data-field" => "datetime"}= t('helpers.datetime')
+          %th{"data-field" => "flight_code"}= t('helpers.flight_code')
+          %th{"data-field" => "check_in_counter"}= t('helpers.check_in_counter')
+          %th{"data-field" => "destination"}= t('helpers.destination')
+          %th{"data-field" => "status"}= t('helpers.status')
+      %tbody
+        - @flight_today_t1.each do |flight|
+          %tr
+            %td= flight.terminal
+            %td= l flight.datetime, format: :short
+            %td= flight_code(flight.code, flight.flight)
+            %td= flight.check_in_counter
+            %td= flight.destination.zh
+            %td= flight.flight_status
+
+  #T2.col.s12
+    %table.striped
+      %thead
+        %tr
+          %th{"data-field" => "terminal"}= t('helpers.terminal')
+          %th{"data-field" => "datetime"}= t('helpers.datetime')
+          %th{"data-field" => "flight_code"}= t('helpers.flight_code')
+          %th{"data-field" => "check_in_counter"}= t('helpers.check_in_counter')
+          %th{"data-field" => "destination"}= t('helpers.destination')
+          %th{"data-field" => "status"}= t('helpers.status')
+      %tbody
+        - @flight_today_t2.each do |flight|
+          %tr
+            %td= flight.terminal
+            %td= l flight.datetime, format: :short
+            %td= flight_code(flight.code, flight.flight)
+            %td= flight.check_in_counter
+            %td= flight.destination.zh
+            %td= flight.flight_status
+
