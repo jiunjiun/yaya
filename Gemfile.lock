@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/jiunjiun/Alohaha.git
-  revision: 5e1957cc69b64a7a0f25128e1e5c542e906f06f4
+  revision: b002e3d30bdf530df54845fda2b664636621ac33
   specs:
     Alohaha (0.0.4)
       iconv
