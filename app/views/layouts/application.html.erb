@@ -3,7 +3,11 @@
 <head>
   <title>Alohaha</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+  <link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -12,5 +16,6 @@
   <%= yield %>
 </div>
 <%= render partial: 'common/footer' %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>
