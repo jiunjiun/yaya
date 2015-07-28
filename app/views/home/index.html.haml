@@ -20,7 +20,7 @@
           %tr
             %td= flight.terminal
             %td= l flight.expected_datetime, format: :short
-            %td= flight_code(flight.code, flight.flight)
+            %td.tooltipped{data: {position:"top", delay:"50", tooltip: "#{flight.code_zh}"}}= flight_code(flight.code, flight.flight)
             %td= flight.baggage_carousel
             %td= flight.destination.zh
             %td= flight.flight_status
@@ -40,7 +40,7 @@
           %tr
             %td= flight.terminal
             %td= l flight.datetime, format: :short
-            %td= flight_code(flight.code, flight.flight)
+            %td.tooltipped{data: {position:"top", delay:"50", tooltip: "#{flight.code_zh}"}}= flight_code(flight.code, flight.flight)
             %td= flight.check_in_counter
             %td= flight.destination.zh
             %td= flight.flight_status
