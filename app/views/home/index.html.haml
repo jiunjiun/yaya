@@ -23,7 +23,7 @@
             %td.tooltipped{data: {position:"top", delay:"50", tooltip: "#{flight.code_zh}"}}= flight_code(flight.code, flight.flight)
             %td= flight.baggage_carousel
             %td= flight.destination.zh
-            %td= flight.flight_status
+            %td= flight_static_desc(flight.flight_status)
 
   #departure.col.s12
     %table.striped
@@ -43,6 +43,6 @@
             %td.tooltipped{data: {position:"top", delay:"50", tooltip: "#{flight.code_zh}"}}= flight_code(flight.code, flight.flight)
             %td= flight.check_in_counter
             %td= flight.destination.zh
-            %td= flight.flight_status
+            %td= flight_static_desc(flight.flight_status)
 
 
