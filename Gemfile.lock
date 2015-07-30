@@ -28,6 +28,8 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.1)
+    active_hash (1.4.0)
+      activesupport (>= 2.2.2)
     activejob (4.2.1)
       activesupport (= 4.2.1)
       globalid (>= 0.3.0)
@@ -299,6 +301,7 @@ PLATFORMS
 
 DEPENDENCIES
   Alohaha!
+  active_hash
   awesome_print
   byebug
   cancancan (~> 1.10)

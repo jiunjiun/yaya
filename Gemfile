@@ -124,3 +124,5 @@ gem 'sitemap_generator'
 # cron
 gem 'whenever', :require => false
 
+gem 'active_hash'
+
