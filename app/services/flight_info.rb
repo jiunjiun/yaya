@@ -11,10 +11,14 @@ class FlightInfo
         destination = Destination.find_or_create(flight.destination)
         other_route = Destination.find_or_create(flight.other_route)
 
-        flight_filter = flight.to_hash.reject {|key, value| key == :raw || key == :destination || key == :other_route}
-        flight_info = Flight.new(flight_filter)
+        fs = flight.flight_status
+        flight_filter = flight.to_hash.reject {|key, value| key == :raw || key == :destination || key == :other_route || key == :flight_status}
+
+        flight_info             = Flight.new(flight_filter)
         flight_info.destination = destination
         flight_info.other_route = other_route
+        flight_info.kind        = KeyValues::FlightKind.find_by_name(flight.kind).code
+        flight_info.status      = KeyValues::FlightStatus.find_by_desc(fs).id
         flight_info.save
       end
     end

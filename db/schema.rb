@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20150725083931) do
     t.datetime "datetime"
     t.datetime "expected_datetime"
     t.integer  "destination_id",    limit: 4
-    t.string   "flight_status",     limit: 255
+    t.integer  "status",            limit: 4
     t.string   "aircraft_type",     limit: 255
     t.integer  "other_route_id",    limit: 4
     t.string   "baggage_carousel",  limit: 255

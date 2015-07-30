@@ -10,7 +10,7 @@ class CreateFlights < ActiveRecord::Migration
       t.datetime    :datetime
       t.datetime    :expected_datetime
       t.references  :destination, index: true
-      t.string      :flight_status
+      t.integer     :status
       t.string      :aircraft_type
       t.references  :other_route, index: true
       t.string      :baggage_carousel
