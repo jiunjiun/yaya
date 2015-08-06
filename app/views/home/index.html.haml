@@ -9,40 +9,36 @@
     %table.striped
       %thead
         %tr
+          %th{"data-field" => "flight_code_name"}= t('helpers.flight_code_name')
           %th{"data-field" => "terminal"}= t('helpers.terminal')
-          %th{"data-field" => "datetime"}= t('helpers.datetime')
-          %th{"data-field" => "flight_code"}= t('helpers.flight_code')
           %th{"data-field" => "baggage_carousel"}= t('helpers.baggage_carousel')
-          %th{"data-field" => "destination"}= t('helpers.destination')
-          %th{"data-field" => "status"}= t('helpers.status')
+          %th{"data-field" => "departure"}= t('helpers.departure')
+          %th{"data-field" => "time_status"}= t('helpers.time_status')
       %tbody
         - @flight_arrivals.each do |flight|
           %tr
+            %td= flight_code_name(flight)
             %td= flight.terminal
-            %td= l flight.expected_datetime, format: :short
-            %td.tooltipped{data: {position:"top", delay:"50", tooltip: "#{flight.code_zh}"}}= flight_code(flight.code, flight.flight)
             %td= flight.baggage_carousel
             %td= flight.destination.zh
-            %td= flight_static_desc(flight.flight_status)
+            %td= time_status(flight.expected_datetime, flight.flight_status)
 
   #departure.col.s12
     %table.striped
       %thead
         %tr
+          %th{"data-field" => "flight_code_name"}= t('helpers.flight_code_name')
           %th{"data-field" => "terminal"}= t('helpers.terminal')
-          %th{"data-field" => "datetime"}= t('helpers.datetime')
-          %th{"data-field" => "flight_code"}= t('helpers.flight_code')
           %th{"data-field" => "check_in_counter"}= t('helpers.check_in_counter')
           %th{"data-field" => "destination"}= t('helpers.destination')
-          %th{"data-field" => "status"}= t('helpers.status')
+          %th{"data-field" => "time_status"}= t('helpers.time_status')
       %tbody
         - @flight_departure.each do |flight|
           %tr
+            %td= flight_code_name(flight)
             %td= flight.terminal
-            %td= l flight.datetime, format: :short
-            %td.tooltipped{data: {position:"top", delay:"50", tooltip: "#{flight.code_zh}"}}= flight_code(flight.code, flight.flight)
             %td= flight.check_in_counter
             %td= flight.destination.zh
-            %td= flight_static_desc(flight.flight_status)
+            %td= time_status(flight.expected_datetime, flight.flight_status)
 
 

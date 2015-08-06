@@ -8,10 +8,10 @@ zh-TW:
   statistics   : '統計'
 
   helpers:
-    terminal:     '航廈'
-    datetime:     '時間'
-    flight_code:  '班機編號'
-    status:       '狀態'
+    terminal:           '航廈'
+    datetime:           '時間'
+    flight_code_name:   '班機'
+    time_status:        '狀態'
 
     departure:    '出發地'
     destination:  '目的地'
