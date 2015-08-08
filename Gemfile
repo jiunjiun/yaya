@@ -97,11 +97,11 @@ gem 'cancancan', '~> 1.10'
 
 # Style
 # gem 'compass-rails'
-# gem 'bootstrap-sass'
 gem 'haml'
 gem 'normalize-rails'
 gem "font-awesome-rails"
 gem 'materialize-sass'
+gem 'bootstrap-sass'
 
 # Upload, zip image
 # gem 'carrierwave'
