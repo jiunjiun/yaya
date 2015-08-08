@@ -3,8 +3,8 @@ module HomeHelper
     "#{code}-#{flight}"
   end
 
-  def flight_static_desc(raw_desc)
-    KeyValues::FlightStatus.find_by_desc(raw_desc).zh
+  def flight_static(raw_desc)
+    KeyValues::FlightStatus.find_by_desc(raw_desc)
   end
 
   def flight_code_name(flight)
@@ -14,8 +14,20 @@ module HomeHelper
 
   def time_status(time, status)
     short_time = l(time, format: :short)
-    static_desc = flight_static_desc(status)
 
-    "#{static_desc} #{short_time}"
+    fs = flight_static(status)
+    fs_class = 'label '
+    case fs.id
+    when 1
+      fs_class += 'label-success'
+    when 2
+      fs_class += 'label-info'
+    when 3..4
+      fs_class += 'label-warning'
+    when 5..6
+      fs_class += 'label-danger'
+    end
+    time_status_desc = content_tag(:sapn, "#{fs.zh} #{short_time}", class: fs_class.to_sym)
+    raw time_status_desc
   end
 end
