@@ -102,6 +102,8 @@ gem 'normalize-rails'
 gem "font-awesome-rails"
 gem 'materialize-sass'
 gem 'bootstrap-sass'
+gem 'pickadate-rails'
+gem "animate-rails"
 
 # Upload, zip image
 # gem 'carrierwave'
