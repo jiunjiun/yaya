@@ -12,6 +12,8 @@ zh-TW:
     datetime:           '時間'
     flight_code_name:   '班機'
     time_status:        '狀態'
+    city:               '城市'
+    airline:            '航空公司'
 
     departure:    '出發地'
     destination:  '目的地'
@@ -19,6 +21,14 @@ zh-TW:
     baggage_carousel:  '行李轉盤'
     check_in_counter:  '報到櫃檯'
 
+    date: '日期'
+
+    p_select: '請選擇...'
+    all: '全部'
+
+    terminals:
+      t1: '第一航廈'
+      t2: '第二航廈'
 
   time:
     formats:

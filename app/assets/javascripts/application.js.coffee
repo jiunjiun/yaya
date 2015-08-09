@@ -14,14 +14,13 @@
 #= require jquery_ujs
 #= require turbolinks
 #= require materialize-sprockets
+#= require pickadate/picker
+#= require pickadate/picker.date
+#= require pickadate/picker.time
 #= require_tree .
 
 $ ->
   initialize = ->
-    # Waves.displayEffect()
-    # $(".button-collapse").sideNav()
-    # $(".dropdown-button").dropdown()
-    # $('.tooltipped').tooltip({delay: 50})
 
   $(document).ready initialize
   $(document).on 'page:load', initialize

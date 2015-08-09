@@ -1,7 +1,40 @@
-%nav
-  .nav-wrapper
-    %form
-      .input-field
-        %input#search{required: "", type: "search"}
-          %label{for: "search"}
-            %i.material-icons search
+#search
+  %nav
+    .nav-wrapper
+      %form
+        .input-field
+          %input#search{required: "", type: "search"}
+            %label{for: "search"}
+              %i.material-icons search
+            %label{for: "menu"}
+              %i.material-icons menu
+
+  .card-panel.animated{style: 'display: none;'}
+    .row
+      .input-field.col.s4
+        %label{for: "date"}= t('helpers.date')
+        %input.datepicker{type: "date"}/
+
+      .input-field.col.s4
+        %input#datetime.timepicker{type: "text"}
+          %label{for: "date"}= t('helpers.datetime')
+
+      .input-field.col.s4
+        %select
+          %option{disabled: "", selected: "", value: ""}= t('helpers.p_select')
+          %option{value: ""}= t('helpers.all')
+          %option{value: "t1"}= t('helpers.terminal.t1')
+          %option{value: "t2"}= t('helpers.terminal.t2')
+        %label= t('helpers.terminal')
+    .row
+      .input-field.col.s4
+        %input#flight_code_name.validate{type: "text"}
+          %label{:for => "flight_code_name"}= t('helpers.flight_code_name')
+
+      .input-field.col.s4
+        %input#city.validate{type: "text"}
+          %label{:for => "city"}= t('helpers.city')
+
+      .input-field.col.s4
+        %input#airline.validate{type: "text"}
+          %label{:for => "airline"}= t('helpers.airline')

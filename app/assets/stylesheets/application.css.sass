@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require normalize-rails
+ *= require animate
  *
  *= require_tree .
  *= require_self
@@ -30,7 +31,7 @@
 // nav ul a, nav .brand-logo
 //   color: #444
 
-.page-footer
+footer.page-footer
   padding-top: 0
 
 #home
@@ -42,3 +43,12 @@
 
   .label
     font-size: medium
+
+#search
+  label[for=menu]
+    cursor: pointer
+    left: auto
+    right: 1rem
+
+    &.active i
+      color: #444
