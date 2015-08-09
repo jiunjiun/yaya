@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   get 'departures/today'
   get 'departures/tomorrow'
 
+  resources :searchs, only: [:index]
+
   root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

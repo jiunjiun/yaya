@@ -1,9 +1,10 @@
 %nav{:role => "navigation"}
   .nav-wrapper.container
-    %a#logo-container.brand-logo{:href => "#"} Alohaha
+    = link_to t('title'), root_path, id: 'logo-container', class: 'brand-logo'
     %ul.right.hide-on-med-and-down
       %li
-        %a{:href => "#"}= t('search')
+        = link_to searchs_path do
+          %i.material-icons search
     %ul#nav-mobile.side-nav{:style => "left: -250px;"}
       %li
         %a{:href => "#"}= t('search')
