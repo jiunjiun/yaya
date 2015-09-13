@@ -20,6 +20,7 @@ class Destination < ActiveRecord::Base
 
   def update_country
     geoinfo = Geocoder.find_geo(self.iata)
+    geoinfo = Geocoder.find_geo(self.en) if geoinfo.blank?
 
     self.airport      = geoinfo[:airport]
     self.country      = geoinfo[:country]
