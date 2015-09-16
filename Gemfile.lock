@@ -139,6 +139,8 @@ GEM
       multi_json (~> 1.8)
     haml (4.0.6)
       tilt
+    highcharts-rails (3.0.10)
+      railties (>= 3.1)
     hirb (0.7.3)
     hirb-unicode (0.0.5)
       hirb (~> 0.5)
@@ -183,7 +185,6 @@ GEM
     nenv (0.2.0)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
-    normalize-rails (3.0.3)
     notiffany (0.0.6)
       nenv (~> 0.1)
       shellany (~> 0.0)
@@ -331,6 +332,7 @@ DEPENDENCIES
   guard
   guard-livereload
   haml
+  highcharts-rails (~> 3.0.0)
   hirb
   hirb-unicode
   jbuilder (~> 2.0)
@@ -341,7 +343,6 @@ DEPENDENCIES
   mina
   mina-puma
   mysql2
-  normalize-rails
   pickadate-rails
   pry
   pry-rails

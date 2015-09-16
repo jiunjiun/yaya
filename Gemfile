@@ -98,12 +98,12 @@ gem 'cancancan', '~> 1.10'
 # Style
 # gem 'compass-rails'
 gem 'haml'
-gem 'normalize-rails'
 gem "font-awesome-rails"
 gem 'materialize-sass'
 gem 'bootstrap-sass'
 gem 'pickadate-rails'
 gem "animate-rails"
+gem "highcharts-rails", "~> 3.0.0"
 
 # Upload, zip image
 # gem 'carrierwave'

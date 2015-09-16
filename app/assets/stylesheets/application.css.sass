@@ -10,7 +10,6 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require normalize-rails
  *= require animate
  *
  *= require_tree .
@@ -52,3 +51,16 @@ footer.page-footer
 
     &.active i
       color: #444
+
+
+.picker__button--today
+  color: #26a69a
+  &:before
+    border: 0
+.picker__button--clear
+  &:before
+    border: 0
+.picker__button--close
+  color: #26a69a
+  &:before
+    content: ''
