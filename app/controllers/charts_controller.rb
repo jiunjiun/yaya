@@ -9,14 +9,12 @@ class ChartsController < ApplicationController
     # date = Date.parse('2015/08/02') rescue nil
     date = Date.parse(date) rescue nil
     if date
-      flights = Flight.where("datetime >= ? and datetime < ?", date.beginning_of_day, (date+1).beginning_of_day )
-
-      arrivals = flights.where(kind: 'A')
+      arrivals = Flight.where("expected_datetime >= ? and expected_datetime < ?", date.beginning_of_day, (date+1).beginning_of_day ).where(kind: 'A')
 
       arrivals_t1 = arrivals.where(terminal: 'T1')
       arrivals_t2 = arrivals.where(terminal: 'T2')
 
-      departure = flights.where(kind: 'D')
+      departure = Flight.where("datetime >= ? and datetime < ?", date.beginning_of_day, (date+1).beginning_of_day ).where(kind: 'A').where(kind: 'D')
 
       departure_t1 = departure.where(terminal: 'T1')
       departure_t2 = departure.where(terminal: 'T2')
