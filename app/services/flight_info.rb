@@ -7,9 +7,9 @@ class FlightInfo
   def self.save_yesterday_info
     haha = Alohaha.new
     haha.flights.each do |flight|
-      if flight.datetime > Date.yesterday && flight.datetime < Date.today
-        destination = Destination.find_or_create(flight.destination)
-        other_route = Destination.find_or_create(flight.other_route)
+      if flight.datetime >= Date.yesterday.beginning_of_day && flight.datetime < Date.today.beginning_of_day
+        destination = Iatum.find_or_create(flight.destination)
+        other_route = Iatum.find_or_create(flight.other_route)
 
         fs = flight.flight_status
         flight_filter = flight.to_hash.reject {|key, value| key == :raw || key == :destination || key == :other_route || key == :flight_status}

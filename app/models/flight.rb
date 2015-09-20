@@ -1,9 +1,9 @@
 class Flight < ActiveRecord::Base
-  belongs_to :destination, class_name: :Destination
-  belongs_to :other_route, class_name: :Destination
+  belongs_to :destination, class_name: :Iatum
+  belongs_to :other_route, class_name: :Iatum
 
   validates_presence_of :terminal, :kind, :code, :code_zh,
-                        :flight, :gate, :datetime, :expected_datetime,
+                        :flight, :datetime, :expected_datetime,
                         :destination_id, :status
 
   validates_length_of :terminal, is: 2

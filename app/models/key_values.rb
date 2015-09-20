@@ -23,12 +23,12 @@ module KeyValues
 
   class FlightStatus < KeyValues::Base
     self.data = [
-      {id: 1, zh: '準時', en: 'ON TIME', desc: '準時ON TIME'},
-      {id: 2, zh: '出發', en: 'DEPARTED', desc: '出發DEPARTED'},
-      {id: 3, zh: '延遲', en: 'DELAY', desc: '延遲DELAY'},
-      {id: 4, zh: '時間更改', en: 'SCHEDULE CHANGE', desc: '時間更改SCHEDULE CHANGE'},
-      {id: 5, zh: '取消', en: 'CANCELLED', desc: '取消CANCELLED'},
-      {id: 6, zh: '已到', en: 'ARRIVED', desc: '已到ARRIVED'},
+      {id: 1, zh: '準時', en: 'ON TIME', code: 'on_time', desc: '準時ON TIME'},
+      {id: 2, zh: '出發', en: 'DEPARTED', code: 'departed', desc: '出發DEPARTED'},
+      {id: 3, zh: '延遲', en: 'DELAY', code: 'delay', desc: '延遲DELAY'},
+      {id: 4, zh: '時間更改', en: 'SCHEDULE CHANGE', code: 'schedule_change', desc: '時間更改SCHEDULE CHANGE'},
+      {id: 5, zh: '取消', en: 'CANCELLED', code: 'cancelled', desc: '取消CANCELLED'},
+      {id: 6, zh: '已到', en: 'ARRIVED', code: 'arrived', desc: '已到ARRIVED'},
     ]
   end
 end
