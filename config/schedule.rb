@@ -19,6 +19,6 @@
 
 # Learn more: http://github.com/javan/whenever
 
-every 1.day, :at => '3:30 am' do
-  runner "FlightInfo.save_yesterday_info"
+every 1.day, :at => '2:00 am' do
+  rake "flight:yesterday"
 end
