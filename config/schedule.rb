@@ -19,6 +19,6 @@
 
 # Learn more: http://github.com/javan/whenever
 
-every 1.day, :at => '2:05 am' do
+every 1.day, :at => '2:09 am' do
   rake "flight:yesterday"
 end
