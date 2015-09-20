@@ -47,8 +47,8 @@ $ ->
     yyyy = today.getFullYear()
 
     $('.datepicker').pickadate
-      min: new Date(2015, 6,30)
-      max: new Date(yyyy, mm, dd-2)
+      min: new Date(2015, 8, 20)
+      max: new Date(yyyy, mm, dd-1)
       # selectMonths: true
       # selectYears: 15
       formatSubmit: 'yyyy/mm/dd'
