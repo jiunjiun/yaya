@@ -12,17 +12,25 @@
 
 #= require jquery
 #= require jquery_ujs
-#= require turbolinks
-#= require materialize-sprockets
-#= require pickadate/picker
-#= require pickadate/picker.date
-#= require pickadate/picker.time
+
+#= require bootstrap
+#= require PixelAdmin/pixel-admin.min
+
 #= require highcharts
 #= require highcharts/highcharts-more
 #= require_tree .
 
 $ ->
+  init = []
+
+  $('.dropdown-toggle').dropdown()
   initialize = ->
+    init.push ->
+      $('#versions span').tooltip()
+
+    window.PixelAdmin.start init
 
   $(document).ready initialize
   $(document).on 'page:load', initialize
+
+

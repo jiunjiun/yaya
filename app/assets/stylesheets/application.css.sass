@@ -12,55 +12,11 @@
  *
  *= require animate
  *
- *= require_tree .
- *= require_self
+ *= require PixelAdmin/bootstrap.min
+ *= require PixelAdmin/pixel-admin.min
+ *= require PixelAdmin/widgets.min
+ *= require PixelAdmin/rtl.min
+ *= require PixelAdmin/themes.min
  */
 
-@import "materialize"
 @import "font-awesome"
-
-// Bootstrap
-@import "bootstrap-sprockets"
-// Core variables and mixins
-@import "bootstrap/variables"
-@import "bootstrap/mixins"
-@import "bootstrap/labels"
-
-
-// nav ul a, nav .brand-logo
-//   color: #444
-
-footer.page-footer
-  padding-top: 0
-
-#home
-  margin-top: 30px
-
-  table
-    th, td
-      text-align: center
-
-  .label
-    font-size: medium
-
-#search
-  label[for=menu]
-    cursor: pointer
-    left: auto
-    right: 1rem
-
-    &.active i
-      color: #444
-
-
-.picker__button--today
-  color: #26a69a
-  &:before
-    border: 0
-.picker__button--clear
-  &:before
-    border: 0
-.picker__button--close
-  color: #26a69a
-  &:before
-    content: ''

@@ -1,31 +1,44 @@
 <!DOCTYPE html>
-<html>
+<!--[if IE 8]>         <html class="ie8"> <![endif]-->
+<!--[if IE 9]>         <html class="ie9 gt-ie8"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="gt-ie8 gt-ie9 not-ie" lang="zh-TW"> <!--<![endif]-->
 <head>
+  <!-- Meta -->
   <meta charset="utf-8">
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-  <meta name="msapplication-tap-highlight" content="no">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="桃園航班資訊">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="<%= "#{t('master_school')} | #{t('title')}" %>">
   <meta name="author" content="jiunjiun">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
   <title>Alohaha | 桃園航班資訊</title>
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-
-  <link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
-  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-
   <%= csrf_meta_tags %>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <%= analytics_init if Rails.env.production? %>
 </head>
-<body>
-<%= render partial: 'common/nav' %>
-<div class="container">
-  <%= yield %>
-</div>
-<%= render partial: 'common/footer' %>
-<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-<%- if I18n.default_locale == :'zh-TW' %>
-  <%= javascript_include_tag 'pickadate.js/translations/zh_TW.js', 'data-turbolinks-track' => true %>
-<% end %>
+
+<body class="theme-clean main-menu-animated" cz-shortcut-listen="true">
+
+  <div id="main-wrapper">
+    <%= render partial: "common/header" %>
+    <%= render partial: "common/nav" %>
+
+    <div id="content-wrapper">
+      <article id="<%= params[:controller] %>">
+        <%= yield %>
+      </article>
+    </div>
+  </div>
+
+  <div id="main-menu-bg"></div>
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>

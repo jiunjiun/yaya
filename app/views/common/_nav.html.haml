@@ -1,12 +1,12 @@
-%nav{:role => "navigation"}
-  .nav-wrapper.container
-    = link_to t('title'), root_path, id: 'logo-container', class: 'brand-logo'
-    %ul.right.hide-on-med-and-down
+#main-menu{:role => "navigation"}
+  #main-menu-inner
+    %ul.navigation
       %li
-        -# = link_to searchs_path do
-          -# %i.material-icons search
-    %ul#nav-mobile.side-nav{:style => "left: -250px;"}
-      %li
-        %a{:href => "#"}= t('search')
-    %a.button-collapse{"data-activates" => "nav-mobile", :href => "#"}
-      %i.material-icons menu
+        = link_to dashboard_path do
+          %i.menu-icon.fa.fa-dashboard
+          %span.mm-text= t('dashboard')
+      -# %li
+      -#   = link_to root_path do
+      -#     %i.menu-icon.fa.fa-edit.fa-fw
+      -#     %span.mm-text= t('search')
+

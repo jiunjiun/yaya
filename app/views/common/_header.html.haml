@@ -1,0 +1,23 @@
+#main-navbar.navbar.navbar-inverse{:role => "navigation"}
+  / Main menu toggle
+  %button#main-menu-toggle{:type => "button"}
+    %i.navbar-icon.fa.fa-bars.icon
+    %span.hide-menu-text HIDE MENU
+  .navbar-inner
+    / Main navbar header
+    .navbar-header
+      / Logo
+      %a.navbar-brand{:href => root_path}
+        = t('title')
+      / Main navbar toggle
+      %button.navbar-toggle.collapsed{"data-target" => "#main-navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+        %i.navbar-icon.fa.fa-bars
+    / / .navbar-header
+    #main-navbar-collapse.collapse.navbar-collapse.main-navbar-collapse
+      -# %ul.nav.navbar-nav
+        -# %li
+        -#   = link_to t('title'), root_path
+      .right.clearfix
+        %ul.nav.navbar-nav.pull-right.right-navbar-nav
+          %li
+            = link_to t('about'), root_path

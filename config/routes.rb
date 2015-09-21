@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     get :ArrDep
   end
 
+  get 'dashboard/index', as: 'dashboard'
 
   root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.
