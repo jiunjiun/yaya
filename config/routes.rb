@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :searchs, only: [:index]
 
   scope controller: :charts, path: 'charts', as: "charts" do
-    get '/', to: :index
+    get '/', to: 'charts#index'
     get :ArrDep
   end
 

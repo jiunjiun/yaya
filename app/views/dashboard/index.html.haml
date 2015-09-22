@@ -1,0 +1,80 @@
+.page-header
+  .row
+    / Page header, center on small screens
+    %h1.col-xs-12.col-sm-4.text-center.text-left-sm
+      %i.fa.fa-dashboard.page-header-icon>
+      \&nbsp;&nbsp;
+      = t('dashboard')
+.row
+  .col-md-4
+    .stat-panel
+      .stat-row
+        / Success darker background
+        .stat-cell.bg-info.darker
+          / Stat panel bg icon
+          %i.fa.fa-plane.bg-icon{:style => "font-size:100px;line-height:105px;height:80px;"}
+          / Big text
+          %span.text-bg 航班狀態
+          -# %br
+            / Small text
+            -# %span.text-sm Your account statistics
+      / /.stat-row
+      .stat-row
+        / Success background, without bottom border, without padding, horizontally centered text
+        .stat-counters.bg-info.no-border-b.no-padding.text-center
+          / Small padding, without horizontal padding
+          .stat-cell.col-xs-4.padding-sm.no-padding-hr
+            / Big text
+            %span.text-bg
+              %strong= @flights_status[:on_time]
+            %br
+              / Extra small text
+              %span.text-xs= KeyValues::FlightStatus.find_by_code('on_time').zh
+          / Small padding, without horizontal padding
+          .stat-cell.col-xs-4.padding-sm.no-padding-hr
+            / Big text
+            %span.text-bg
+              %strong= @flights_status[:departed]
+            %br
+              / Extra small text
+              %span.text-xs= KeyValues::FlightStatus.find_by_code('departed').zh
+          / Small padding, without horizontal padding
+          .stat-cell.col-xs-4.padding-sm.no-padding-hr
+            / Big text
+            %span.text-bg
+              %strong= @flights_status[:delay]
+            %br
+              / Extra small text
+              %span.text-xs= KeyValues::FlightStatus.find_by_code('delay').zh
+        / /.stat-counters
+      / /.stat-row
+      .stat-row
+        / Success background, without bottom border, without padding, horizontally centered text
+        .stat-counters.bg-info.no-border-b.no-padding.text-center
+          / Small padding, without horizontal padding
+          .stat-cell.col-xs-4.padding-sm.no-padding-hr
+            / Big text
+            %span.text-bg
+              %strong= @flights_status[:schedule_change]
+            %br
+              / Extra small text
+              %span.text-xs= KeyValues::FlightStatus.find_by_code('schedule_change').zh
+          .stat-cell.col-xs-4.padding-sm.no-padding-hr
+            / Big text
+            %span.text-bg
+              %strong= @flights_status[:cancelled]
+            %br
+              / Extra small text
+              %span.text-xs= KeyValues::FlightStatus.find_by_code('cancelled').zh
+          / Success background, small padding, without left and right padding, vertically centered text
+          .stat-cell.col-xs-4.padding-sm.no-padding-hr
+            / Big text
+            %span.text-bg
+              %strong= @flights_status[:arrived]
+            %br
+              / Extra small text
+              %span.text-xs= KeyValues::FlightStatus.find_by_code('arrived').zh
+        / /.stat-counters
+      / /.stat-row
+
+

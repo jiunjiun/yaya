@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/jiunjiun/Alohaha.git
-  revision: 8d759e671b1be1ebf28ae85c2eb42ac8ba3a0b4b
+  revision: 3d1195b539ab4b9405e1ce7f4b52c214324c08bc
   specs:
-    Alohaha (0.0.5)
+    Alohaha (0.0.6)
       curb
       iconv
       virtus
