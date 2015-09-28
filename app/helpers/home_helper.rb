@@ -15,19 +15,24 @@ module HomeHelper
   def time_status(time, status)
     short_time = l(time, format: :short)
 
-    fs = flight_static(status)
     fs_class = 'label '
-    case fs.id
-    when 1
-      fs_class += 'label-success'
-    when 2
-      fs_class += 'label-info'
-    when 3..4
-      fs_class += 'label-warning'
-    when 5..6
-      fs_class += 'label-danger'
+
+    if status.present?
+      fs = flight_static(status)
+      case fs.id
+      when 1
+        fs_class += 'label-success'
+      when 2
+        fs_class += 'label-info'
+      when 3..4
+        fs_class += 'label-warning'
+      when 5..6
+        fs_class += 'label-danger'
+      end
+      time_status_desc = content_tag(:sapn, "#{fs.zh} #{short_time}", class: fs_class.to_sym)
+    else
+      time_status_desc = content_tag(:sapn, "#{short_time}", class: fs_class.to_sym)
     end
-    time_status_desc = content_tag(:sapn, "#{fs.zh} #{short_time}", class: fs_class.to_sym)
     raw time_status_desc
   end
 end
