@@ -53,7 +53,7 @@ class FlightInfo
     flight_departure_iata_count = {}
     flight_departure_country_count = {}
 
-    flights = Alohaha.new.today.filter_kind
+    flights = Hasami.new.today.filter_kind
 
     flight_arr = flights[:Arrivals]
     flight_arr.each do |flight|
