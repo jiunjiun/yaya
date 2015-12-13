@@ -1,11 +1,10 @@
 #!/usr/bin/env ruby
 
-require 'alohaha'
-require 'alohaha/flight_helper'
+require 'hasami'
 class FlightInfo
   #  save yesterday flight info
   def self.save_yesterday_info
-    haha = Alohaha.new
+    haha = Hasami.new
     haha.flights.each do |flight|
       if flight.datetime >= Date.yesterday.beginning_of_day && flight.datetime < Date.today.beginning_of_day
         destination = Iatum.find_or_create(flight.destination)
@@ -25,20 +24,20 @@ class FlightInfo
   end
 
   def self.flights
-    Alohaha.new.by_datetime.filter_kind
+    Hasami.new.by_datetime.filter_kind
   end
 
   def self.today
-    Alohaha.new.today.filter_kind
+    Hasami.new.today.filter_kind
   end
 
   def self.tomorrow
-    Alohaha.new.tomorrow.filter_kind
+    Hasami.new.tomorrow.filter_kind
   end
 
   def self.flights_status
     status_count = {on_time: 0, departed: 0, delay: 0, schedule_change: 0, cancelled: 0, arrived: 0}
-    flights = Alohaha.new.today
+    flights = Hasami.new.today
 
     flights.each do |flight|
       status_count[KeyValues::FlightStatus.find_by_desc(flight.flight_status).code.to_sym] += 1
