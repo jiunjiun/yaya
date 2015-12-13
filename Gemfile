@@ -85,7 +85,7 @@ group :test do
   gem "selenium-webdriver", "~> 2.39.0"
 end
 
-gem 'Alohaha', github: 'jiunjiun/Alohaha'
+gem 'hasami', github: 'jiunjiun/hasami'
 
 # User account
 gem 'devise'

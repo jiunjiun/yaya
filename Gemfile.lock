@@ -1,8 +1,8 @@
 GIT
-  remote: git://github.com/jiunjiun/Alohaha.git
-  revision: 3d1195b539ab4b9405e1ce7f4b52c214324c08bc
+  remote: git://github.com/jiunjiun/hasami.git
+  revision: eb722e9957c34647d479d5ebfb170402bde3c9a9
   specs:
-    Alohaha (0.0.6)
+    hasami (0.1.0)
       curb
       iconv
       virtus
@@ -313,7 +313,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  Alohaha!
   active_hash
   animate-rails
   awesome_print
@@ -332,6 +331,7 @@ DEPENDENCIES
   guard
   guard-livereload
   haml
+  hasami!
   highcharts-rails (~> 3.0.0)
   hirb
   hirb-unicode
@@ -365,4 +365,4 @@ DEPENDENCIES
   will_paginate-bootstrap
 
 BUNDLED WITH
-   1.10.6
+   1.11.0
