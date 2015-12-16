@@ -72,13 +72,13 @@ class FlightInfo
       end
     end
 
+    country_codes = Hash[ Iatum.where.not(code: nil).pluck(:code, :country_code)]
+
     flight_arrivals_iata_count.each do |key, val|
-      iatum = Iatum.find_by_code(key)
-      next if iatum.blank? || iatum.country_code.blank?
-      if flight_arrivals_country_count[iatum.country_code].blank?
-        flight_arrivals_country_count[iatum.country_code] = val
+      if flight_arrivals_country_count[country_codes[key]].blank?
+        flight_arrivals_country_count[country_codes[key]] = val
       else
-        flight_arrivals_country_count[iatum.country_code] += val
+        flight_arrivals_country_count[country_codes[key]] += val
       end
     end
 
@@ -94,12 +94,10 @@ class FlightInfo
     end
 
     flight_departure_iata_count.each do |key, val|
-      iatum = Iatum.find_by_code(key)
-      next if iatum.blank? || iatum.country_code.blank?
-      if flight_departure_country_count[iatum.country_code].blank?
-        flight_departure_country_count[iatum.country_code] = val
+      if flight_departure_country_count[country_codes[key]].blank?
+        flight_departure_country_count[country_codes[key]] = val
       else
-        flight_departure_country_count[iatum.country_code] += val
+        flight_departure_country_count[country_codes[key]] += val
       end
     end
 
