@@ -25,7 +25,7 @@ $ ->
         plotShadow: false
         type: 'pie'
       title: text: '入境國家比例'
-      tooltip: pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+      tooltip: pointFormat: '{series.name}: <b>{point.percentage:.1f}% ({point.y})</b>'
       plotOptions: pie:
         allowPointSelect: true
         cursor: 'pointer'
@@ -43,7 +43,7 @@ $ ->
         plotShadow: false
         type: 'pie'
       title: text: '出境國家比例'
-      tooltip: pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+      tooltip: pointFormat: '{series.name}: <b>{point.percentage:.1f}% ({point.y})</b>'
       plotOptions: pie:
         allowPointSelect: true
         cursor: 'pointer'
