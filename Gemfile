@@ -103,7 +103,7 @@ gem 'materialize-sass'
 gem 'bootstrap-sass'
 gem 'pickadate-rails'
 gem "animate-rails"
-gem "highcharts-rails", "~> 3.0.0"
+gem "highcharts-rails"
 
 # Upload, zip image
 # gem 'carrierwave'
@@ -127,4 +127,6 @@ gem 'sitemap_generator'
 gem 'whenever', :require => false
 
 gem 'active_hash'
+
+gem 'i18n-country-translations'
 
