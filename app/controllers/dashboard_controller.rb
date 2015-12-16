@@ -1,8 +1,13 @@
 class DashboardController < ApplicationController
   def index
-    @flights_status = FlightInfo.flights_status
-    @flights_country = FlightInfo.flights_country
+    fi                       = FlightInfo.new
+    @flights_status          = fi.flights_status
+    @flights_country         = fi.flights_country
+    @flights_filter_by_today = fi.flights_filter_by_today
 
-    # render text: flights_country.to_json
+    respond_to do |format|
+      format.html {}
+      format.json {}
+    end
   end
 end

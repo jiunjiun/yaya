@@ -23,21 +23,27 @@ class FlightInfo
     end
   end
 
-  def self.flights
-    Hasami.new.by_datetime.filter_kind
+  attr_accessor :hasami
+
+  def initialize
+    @hasami = Hasami.new
   end
 
-  def self.today
-    Hasami.new.today.filter_kind
+  def flights
+    @hasami.by_datetime.filter_kind
   end
 
-  def self.tomorrow
-    Hasami.new.tomorrow.filter_kind
+  def today
+    @hasami.today.filter_kind
   end
 
-  def self.flights_status
+  def tomorrow
+    @hasami.tomorrow.filter_kind
+  end
+
+  def flights_status
     status_count = {on_time: 0, departed: 0, delay: 0, schedule_change: 0, cancelled: 0, arrived: 0}
-    flights = Hasami.new.today
+    flights = @hasami.today
 
     flights.each do |flight|
       status_count[KeyValues::FlightStatus.find_by_desc(flight.flight_status).code.to_sym] += 1
@@ -46,14 +52,14 @@ class FlightInfo
     status_count
   end
 
-  def self.flights_country
+  def flights_country
     flights_country = {}
     flight_arrivals_iata_count  = {}
     flight_arrivals_country_count = {}
     flight_departure_iata_count = {}
     flight_departure_country_count = {}
 
-    flights = Hasami.new.today.filter_kind
+    flights = @hasami.today.filter_kind
 
     flight_arr = flights[:Arrivals]
     flight_arr.each do |flight|
@@ -68,7 +74,7 @@ class FlightInfo
 
     flight_arrivals_iata_count.each do |key, val|
       iatum = Iatum.find_by_code(key)
-      next if iatum.blank?
+      next if iatum.blank? || iatum.country_code.blank?
       if flight_arrivals_country_count[iatum.country_code].blank?
         flight_arrivals_country_count[iatum.country_code] = val
       else
@@ -89,7 +95,7 @@ class FlightInfo
 
     flight_departure_iata_count.each do |key, val|
       iatum = Iatum.find_by_code(key)
-      next if iatum.blank?
+      next if iatum.blank? || iatum.country_code.blank?
       if flight_departure_country_count[iatum.country_code].blank?
         flight_departure_country_count[iatum.country_code] = val
       else
@@ -103,5 +109,27 @@ class FlightInfo
     flights_countrys = {arrivals: flight_arrivals_country_count, departure: flight_departure_country_count}
   end
 
+  def flights_filter_by_today
+    result = {arrivals: {}, departure: {}}
+
+    23.times { |t| result[:arrivals][t] = result[:departure][t] = 0  }
+
+    flights = self.today
+    flights[:Arrivals].each do |flight|
+      hour = flight[:expected_datetime].to_time.hour
+
+      result[:arrivals][hour] = 0 if result[:arrivals][hour].blank?
+      result[:arrivals][hour] += 1
+    end
+
+    flights[:Departure].each do |flight|
+      hour = flight[:expected_datetime].to_time.hour
+
+      result[:departure][hour] = 0 if result[:departure][hour].blank?
+      result[:departure][hour] += 1
+    end
+
+    result
+  end
 
 end

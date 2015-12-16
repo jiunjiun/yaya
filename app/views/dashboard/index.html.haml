@@ -6,11 +6,11 @@
       \&nbsp;&nbsp;
       = t('dashboard')
 .row
-  .col-md-4
+  .col-md-12
     .stat-panel
       .stat-row
         / Success darker background
-        .stat-cell.bg-info.darker
+        .stat-cell.bg-info.darker.text-center
           / Stat panel bg icon
           %i.fa.fa-plane.bg-icon{:style => "font-size:100px;line-height:105px;height:80px;"}
           / Big text
@@ -46,11 +46,6 @@
             %br
               / Extra small text
               %span.text-xs= KeyValues::FlightStatus.find_by_code('delay').zh
-        / /.stat-counters
-      / /.stat-row
-      .stat-row
-        / Success background, without bottom border, without padding, horizontally centered text
-        .stat-counters.bg-info.no-border-b.no-padding.text-center
           / Small padding, without horizontal padding
           .stat-cell.col-xs-4.padding-sm.no-padding-hr
             / Big text
@@ -74,7 +69,11 @@
             %br
               / Extra small text
               %span.text-xs= KeyValues::FlightStatus.find_by_code('arrived').zh
-        / /.stat-counters
-      / /.stat-row
-
-
+  .col-md-12
+    #filter_by_today
+%br/
+.row
+  .col-md-6
+    #country_arrivals
+  .col-md-6
+    #country_departure
