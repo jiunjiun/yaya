@@ -42,9 +42,10 @@ class FlightInfo
   end
 
   def flights_status
-    status_count = {on_time: 0, departed: 0, delay: 0, schedule_change: 0, cancelled: 0, arrived: 0}
+    status_count = {on_time: 0, departed: 0, delay: 0, schedule_change: 0, cancelled: 0, arrived: 0, sum: 0}
     flights = @hasami.today
 
+    status_count[:sum] = flights.size
     flights.each do |flight|
       status_count[KeyValues::FlightStatus.find_by_desc(flight.flight_status).code.to_sym] += 1
     end

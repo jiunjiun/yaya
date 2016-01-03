@@ -1,15 +1,11 @@
 Rails.application.routes.draw do
-  get 'departures/today'
-  get 'departures/tomorrow'
+  # get 'departures/today'
+  # get 'departures/tomorrow'
 
-  resources :searchs, only: [:index]
-
-  scope controller: :charts, path: 'charts', as: "charts" do
-    get '/', to: 'charts#index'
-    get :ArrDep
-  end
+  # resources :searchs, only: [:index]
 
   get 'dashboard', to: 'dashboard#index', as: 'dashboard'
+  # get 'about',     to: 'page#about',      as: 'about'
 
   root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.

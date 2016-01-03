@@ -2,7 +2,7 @@ class ChartsController < ApplicationController
   def index
   end
 
-  def ArrDep
+  def arr_dep
     result = {}
 
     date = params[:date]
